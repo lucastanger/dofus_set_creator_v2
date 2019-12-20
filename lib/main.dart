@@ -18,9 +18,12 @@ class MyApp extends StatelessWidget {
       builder: (BuildContext context, AsyncSnapshot<FirebaseUser> snapshot) {
         if(snapshot.hasData) {
           FirebaseUser user = snapshot.data;
-          return MyStatelessWidget();
+          // TODO: Fix this
+          // return MyStatelessWidget();
         }
         return MaterialApp(
+          // Disable DebugModeBanner
+          debugShowCheckedModeBanner: false,
           title: 'Login',
           home: LoginPage(),
         );

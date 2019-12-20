@@ -1,9 +1,17 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:apple_sign_in/apple_sign_in.dart';
+//import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
+// Google Login
 final GoogleSignIn googleSignIn = GoogleSignIn();
+final AppleSignIn appleSignIn = AppleSignIn();
+// Facebook Login
+//final facebookLogin = FacebookLogin();
+//final result = await facebookLogin.logInWithReadPermissions(['email']);
 
+// Google SignIn Method
 Future<String> signInWithGoogle() async {
   final GoogleSignInAccount googleSignInAccount = await googleSignIn.signIn();
   final GoogleSignInAuthentication googleSignInAuthentication =
@@ -25,9 +33,17 @@ Future<String> signInWithGoogle() async {
 
   return 'signInWithGoogle succeeded: $user';
 }
-
+// Google SignOut Method
 void signOutGoogle() async{
   await googleSignIn.signOut();
 
   print("User Sign Out");
+}
+
+Future<String> signInWithFacebook() async {
+  return null;
+}
+
+void signOutFacebook() async {
+
 }
