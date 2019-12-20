@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'service/sign_in.dart';
-import 'main_page.dart';
+import '../service/sign_in.dart';
+import 'main_view.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -26,7 +26,6 @@ class _LoginPageState extends State<LoginPage> {
             children: <Widget>[
               FlutterLogo(size: 150),
               SizedBox(height: 50),
-
               SizedBox(height: 20),
               _signInButtonGoogle(),
               SizedBox(height: 20),
@@ -46,7 +45,8 @@ class _LoginPageState extends State<LoginPage> {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) {
-                return MyStatelessWidget();
+                // Entry Point
+                return MainWidget();
               },
             ),
           );
@@ -86,7 +86,8 @@ class _LoginPageState extends State<LoginPage> {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) {
-                return MyStatelessWidget();
+                // Entry Point
+                return MainWidget();
               },
             ),
           );
