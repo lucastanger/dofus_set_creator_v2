@@ -17,7 +17,6 @@ class MyApp extends StatelessWidget {
       builder: (BuildContext context, AsyncSnapshot<FirebaseUser> snapshot) {
         if(snapshot.hasData) {
           FirebaseUser user = snapshot.data;
-          // TODO: Fix this
           return MainWidget();
         }
         return MaterialApp(
@@ -30,7 +29,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-
-
-

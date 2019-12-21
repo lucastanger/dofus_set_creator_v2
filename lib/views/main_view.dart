@@ -1,4 +1,5 @@
 import 'package:SetCreator/views/home_view.dart';
+import 'package:SetCreator/views/search_view.dart';
 import 'package:flutter/material.dart';
 
 final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
@@ -40,9 +41,9 @@ class _FloatingActionButtonState extends State<MyFloatingActionButton> {
 class _MainWidgetState extends State<MainWidget> {
   int _currentIndex = 0;
   final List<Widget> _children = [
-    HomeViewWidget(Colors.blue),
-    HomeViewWidget(Colors.red),
-    HomeViewWidget(Colors.amber)
+    HomeViewWidget(Colors.white),
+    SearchViewWidget(),
+    HomeViewWidget(Colors.white)
   ];
 
   @override
@@ -69,7 +70,27 @@ class _MainWidgetState extends State<MainWidget> {
         selectedItemColor: accentColor,
       ),
       floatingActionButton: MyFloatingActionButton(),
+      appBar: AppBar(
+        title: Text('AppBar', style: TextStyle(color: Colors.black)),
+        centerTitle: true,
+        backgroundColor: Colors.white,
+        automaticallyImplyLeading: false,  // Remove back Arrow
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.filter_list),
+            color: Colors.black,
+            onPressed: () {
+
+            },
+          ),
+          true ? showFilter,
+        ],
+      ),
     );
+  }
+
+  void showFilter() {
+
   }
 
   void onTabTapped(int index) {
@@ -83,8 +104,10 @@ class MyFloatingActionButton extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => _FloatingActionButtonState();
 }
-
 class MainWidget extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => _MainWidgetState();
 }
+
+
+
