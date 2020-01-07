@@ -7,8 +7,15 @@ class HomeViewWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: color,
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Home', style: TextStyle(color: Colors.black)),
+          centerTitle: true,
+          backgroundColor: Colors.white,
+          automaticallyImplyLeading: false,  // Remove back Arrow
+          actions: <Widget>[
+          ],
+        ),
     );
   }
 }

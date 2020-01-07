@@ -1,3 +1,4 @@
+import 'package:SetCreator/views/account_view.dart';
 import 'package:SetCreator/views/home_view.dart';
 import 'package:SetCreator/views/search_view.dart';
 import 'package:flutter/material.dart';
@@ -10,14 +11,13 @@ class _FloatingActionButtonState extends State<MyFloatingActionButton> {
 
   @override
   Widget build(BuildContext context) {
-    return showFab
-        ? FloatingActionButton(
+    return showFab ? FloatingActionButton(
           backgroundColor: accentColor,
           onPressed: () {
             showModalBottomSheet(
                 context: context,
                 builder: (builder) {
-                  return new Container(
+                  return Container(
                     height: 350,
                     color: Colors.transparent,
                     child: new Container(
@@ -27,8 +27,7 @@ class _FloatingActionButtonState extends State<MyFloatingActionButton> {
             });
           },
           child: Icon(Icons.add),
-        )
-        : Container();
+        ) : Container();
   }
 
   void showFloatingActionButton(bool value) {
@@ -43,7 +42,7 @@ class _MainWidgetState extends State<MainWidget> {
   final List<Widget> _children = [
     HomeViewWidget(Colors.white),
     SearchViewWidget(),
-    HomeViewWidget(Colors.white)
+    AccountViewWidget()
   ];
 
   @override
@@ -70,22 +69,6 @@ class _MainWidgetState extends State<MainWidget> {
         selectedItemColor: accentColor,
       ),
       floatingActionButton: MyFloatingActionButton(),
-      appBar: AppBar(
-        title: Text('AppBar', style: TextStyle(color: Colors.black)),
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        automaticallyImplyLeading: false,  // Remove back Arrow
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.filter_list),
-            color: Colors.black,
-            onPressed: () {
-
-            },
-          ),
-          true ? showFilter,
-        ],
-      ),
     );
   }
 
